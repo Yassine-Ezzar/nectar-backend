@@ -1,0 +1,68 @@
+### 1. User Signup
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "testuser@example.com",
+  "password": "password123"
+}
+
+---
+
+### 2. User Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "password123"
+}
+
+---
+
+### 3. Get All Products
+GET http://localhost:5000/api/products
+Authorization: Bearer <your-jwt-token>
+
+---
+
+### 4. Get Product by ID
+GET http://localhost:5000/api/products/PRODUCT_ID
+Authorization: Bearer <your-jwt-token>
+
+---
+
+### 5. Add a Product
+POST http://localhost:5000/api/products
+Authorization: Bearer <your-jwt-token>
+Content-Type: application/json
+
+{
+  "name": "Organic Bananas",
+  "quantity": 7,
+  "unit": "kg",
+  "description": "Fresh organic bananas.",
+  "price": 4.99
+}
+
+---
+
+### 6. Update a Product
+PUT http://localhost:5000/api/products/PRODUCT_ID
+Authorization: Bearer <your-jwt-token>
+Content-Type: application/json
+
+{
+  "name": "Red Apples",
+  "quantity": 10,
+  "unit": "kg",
+  "description": "Fresh and juicy red apples.",
+  "price": 5.99
+}
+
+---
+
+### 7. Delete a Product
+DELETE http://localhost:5000/api/products/PRODUCT_ID
+Authorization: Bearer <your-jwt-token>
